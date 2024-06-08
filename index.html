@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="">
+    < class="main">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 my-3 d-flex justify-content-center align-items-center flex-column"
+          >
+            <h1 class="py-2 position-relative">Bookmarker</h1>
+            </div>
+            <hr />
+            <div class=" bookmark-body d-flex align-items-center justify-content-center flex-column  p-3  gap-4 mt-5 py-4">
+              <h2 class="text-center text-info-emphasis ">Bookmark your favorite sites</h2>
+            
+            <div class=" d-flex  justify-content-center w-100 flex-column">
+              <label class="pb-2  fw-semibold" for="SiteName "> Site Name</label>
+              <input
+                id="siteName"
+                class=" form-control "
+                type="text"
+                value=""
+                placeholder="Bookmark Name"
+              />
+            </div>
+            <div class=" d-flex  justify-content-center w-100 flex-column accordion">
+              <label class="pb-2 fw-semibold " for="SiteURL "> Site URL</label>
+              <input
+                id="webURL"
+                value=""
+                class=" form-control "
+                type="url" placeholder="Website URL"
+              />
+            </div>
+           
+              <button id="btn" type="submit" class="btn btn-submit my-3 px-5" >
+                submit
+              </button>
+            
+          </div>
+          </div>
+          
+          <hr />
+
+      
+              <div id="">
+                <table class="table  mt-4 text-center bg-light">
+                  <thead >
+                    <th>index</th>
+                    <th>WebSite Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                  </thead>
+                  <tbody id="rowData">
+
+                  </tbody>
+                </table>
+              </div>
+          
+          
+        </div>
+      </div>
+        </div>
+        
+  <script src="main.js"></script>
+  </body>
+</html>

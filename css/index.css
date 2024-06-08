@@ -1,0 +1,22 @@
+main {
+  height: 100vh;
+}
+body {
+  background-color: rgb(247, 236, 222);
+}
+
+.btn-submit {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #d1512d;
+  --bs-btn-border-color: #d1512d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bb4120;
+  --bs-btn-hover-border-color: #a03315;
+}
+
+.form-control:focus {
+  border-color: #d99c39;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+  background-color: #fff;
+}
