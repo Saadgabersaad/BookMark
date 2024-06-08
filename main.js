@@ -3,12 +3,15 @@ var webSiteUrl = document.getElementById("webURL");
 var btn = document.getElementById("btn");
 var deleteBtn = document.getElementById("deleteBtn");
 wList = [];
-// ?
+// ?111111111111111111111111111111111
 
-if (localStorage.getItem("web") == !null) {
+if (localStorage.getItem("web") !== null) {
   wList = JSON.parse(localStorage.getItem("web"));
   displayUrl();
+} else {
+  wList = [];
 }
+
 function addWeb() {
   if (webSiteName.value == "" || webSiteUrl.value == "") return;
 
@@ -20,8 +23,9 @@ function addWeb() {
   console.log(wList);
   displayUrl();
   clearForm();
+  localStorage.setItem("web", JSON.stringify(wList));
+  addHttps();
 }
-localStorage.setItem("web", JSON.stringify(wList));
 btn.addEventListener("click", addWeb);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -32,7 +36,9 @@ function displayUrl() {
     <td> ${[i + 1]}</td>
     <td> ${wList[i].name}</td>
 
-    <td><button class="btn btn-danger" ><i class="fa-solid fa-eye pe-2"></i>Visit </button> </td>
+    <td> <a target="_blank"  href="${
+      wList[i].wURL
+    }">Visit<i class="fa-solid fa-eye pe-2"></i> </a> </td>
    <td> <button id='deleteBtn' onclick="deleteWebSite(${i})" class="btn btn-outline-warning"><i class="fa-solid fa-trash-can"></i> Delete</button> </td>
     </tr>
     `;
@@ -54,3 +60,8 @@ function deleteWebSite(index) {
   localStorage.setItem("web", JSON.stringify(wList));
 }
 // ???/
+function addHttps() {
+  if (!webSiteUrl.value.startsWith("https://")) {
+    webSiteUrl.value = "https://www." + webSiteUrl.value;
+  }
+}

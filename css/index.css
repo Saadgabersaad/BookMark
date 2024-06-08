@@ -5,6 +5,14 @@ body {
   background-color: rgb(247, 236, 222);
 }
 
+.bookmark-body h2 {
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .btn-submit {
   --bs-btn-color: #fff;
   --bs-btn-bg: #d1512d;
