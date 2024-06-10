@@ -15,16 +15,21 @@ if (localStorage.getItem("web") !== null) {
 function addWeb() {
   if (webSiteName.value == "" || webSiteUrl.value == "") return;
 
+  console.log(validateURL(webSiteUrl.value));
+
+  if (validateURL(webSiteUrl.value) == false) {
+    return;
+  }
+
   var webURL = {
     name: webSiteName.value,
-    wURL: webSiteUrl.value,
+    wURL: addHttps(webSiteUrl.value),
   };
   wList.push(webURL);
   console.log(wList);
   displayUrl();
   clearForm();
   localStorage.setItem("web", JSON.stringify(wList));
-  addHttps();
 }
 btn.addEventListener("click", addWeb);
 
@@ -60,8 +65,16 @@ function deleteWebSite(index) {
   localStorage.setItem("web", JSON.stringify(wList));
 }
 // ???/
-function addHttps() {
-  if (!webSiteUrl.value.startsWith("https://")) {
-    webSiteUrl.value = "https://www." + webSiteUrl.value;
+function addHttps(samir) {
+  if (!samir) {
+    return "https://www." + samir;
   }
+
+  return samir;
+}
+
+function validateURL(value) {
+  const validator = /^[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+
+  return validator.test(value);
 }
