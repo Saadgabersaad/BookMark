@@ -3,6 +3,32 @@ main {
 }
 body {
   background-color: rgb(247, 236, 222);
+  font-family: "PT Sans Caption", sans-serif;
+}
+h1::before {
+  content: "";
+  width: 100%;
+  bottom: 10px;
+  height: 25%;
+  background-color: #d99c39;
+  z-index: -1;
+  position: absolute;
+}
+h1{
+      font-family: "Pacifico", cursive;
+    
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+.bookmark-body {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
 }
 
 .bookmark-body h2 {
@@ -27,4 +53,28 @@ body {
   outline: 0;
   box-shadow: 0 0 0 0.25rem #fec26055;
   background-color: #fff;
+}
+
+.btn-visit {
+  background-color: #9eb23b;
+  color: white;
+}
+
+.box-conent {
+  width: 500px;
+  z-index: 10;
+}
+.circles span:nth-child(1) {
+  background-color: #f15f5d;
+}
+.circles span:nth-child(2) {
+  background-color: #febe2e;
+}
+.circles span:nth-child(3) {
+  background-color: #4db748;
+}
+.circles span {
+  display: block;
+  width: 20px;
+  height: 20px;
 }
